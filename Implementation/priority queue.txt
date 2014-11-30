@@ -1,0 +1,30 @@
+class Node{
+	int priority;
+	int val;
+	Node next;	
+	Node(int val,int priority){
+		this.val = val;
+		this.priority = priority;
+		this.next = null;
+	}
+}
+class PriorityQueue{
+	Node first;
+	Node helper=new Node(0,0);
+	void enqueue(int val,int priority){
+		if(first==null){
+			first=new Node(val,priority);
+			helper.next=first;
+		}
+		else{
+			Node tmp=new Node(val,priority);
+			Node p=helper;
+			while(p.next!=null&&tmp.priority<p.next.priority){
+				p=p.next;
+
+			}
+			tmp.next=p.next;
+			p.next=tmp;
+		}
+	}
+}

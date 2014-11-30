@@ -1,0 +1,15 @@
+void selectSort(int array[]){
+	for(int i=0;i<array.length;i++){
+		int index=i;
+		for(int j=i;j<array.length;j++){
+			
+			if(array[index]>array[j]){
+				index=j;
+			}
+		}
+		int tmp=array[i];
+		array[i]=array[index];
+		array[index]=array[i];		
+	}
+
+}
